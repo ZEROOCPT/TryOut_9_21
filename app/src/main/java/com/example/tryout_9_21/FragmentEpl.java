@@ -44,7 +44,7 @@ public class FragmentEpl extends Fragment {
 
     private void fetchTeams() {
         SportsApi api = ApiClient.getClient().create(SportsApi.class);
-        Call<TeamResponse> call = api.getTeamsByLeague("English Premier League");
+        Call<TeamResponse> call = api.getTeamsByLeague();
 
         pb.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);

@@ -22,12 +22,15 @@ public class MainActivity extends AppCompatActivity {
                 selectedFragment = new FragmentLaliga();
             } else if (item.getItemId() == R.id.menu_premier) {
                 selectedFragment = new FragmentEpl();
+            } else if (item.getItemId() == R.id.menu_profile) {
+                selectedFragment = new FragmentProfile();
             }
 
             if (selectedFragment != null) {
                 loadFragment(selectedFragment);
                 return true;
             }
+
 
             return false;
         });

@@ -38,13 +38,12 @@ public class FragmentLaliga extends Fragment {
         pb = view.findViewById(R.id.pb);
 
         fetchTeams();
-
         return view;
     }
 
     private void fetchTeams() {
         SportsApi api = ApiClient.getClient().create(SportsApi.class);
-        Call<TeamResponse> call = api.getTeamsByCountry("Soccer", "Spain");
+        Call<TeamResponse> call = api.getTeamsByCountry();
 
         pb.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
