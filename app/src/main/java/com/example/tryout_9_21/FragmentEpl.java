@@ -19,7 +19,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class FragmentLaliga extends Fragment {
+public class FragmentEpl extends Fragment {
 
     private RecyclerView recyclerView;
     private ProgressBar pb;
@@ -30,7 +30,7 @@ public class FragmentLaliga extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_laliga, container, false);
+        View view = inflater.inflate(R.layout.fragment_epl, container, false);
 
         recyclerView = view.findViewById(R.id.recyclerViewTeams);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -44,7 +44,7 @@ public class FragmentLaliga extends Fragment {
 
     private void fetchTeams() {
         SportsApi api = ApiClient.getClient().create(SportsApi.class);
-        Call<TeamResponse> call = api.getTeamsByCountry("Soccer", "Spain");
+        Call<TeamResponse> call = api.getTeamsByLeague("English Premier League");
 
         pb.setVisibility(View.VISIBLE);
         recyclerView.setVisibility(View.GONE);
